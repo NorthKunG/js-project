@@ -1,16 +1,16 @@
 <template>
     <div>
         <h2>Get All Users</h2>
-        <h4>จำนวนผู้ใช้งาน{{  users.length  }}</h4>
-        <div v-for="user in users" v-bind:key="user.id">
+        <h4>จำนวนผู้ใช้งาน {{  users.length  }}</h4>
+        <div v-for="user in users" v-bind:key="user.id" class="justify-content-start">
             <p>id: {{  user.id }}</p>
             <p>ชื่อ-นามสกุล {{  user.name }} - {{ user.lastname }}</p>
             <p>email: {{  user.email }}</p>
             <p>password: {{ user.password }}</p>
             <p>
-                <button v-on:click="navigateTo('/user/'+user.id)">ดูข้อมูลผู้ใช้</button>
-                <button v-on:click="navigateTo('/user/edit/'+user.id)">แก้ไขข้อมูล</button>
-                <button v-on:click="deleteUser(user)">ลบข้อมูล</button>
+                <button class="btn btn-primary" v-on:click="navigateTo('/user/'+user.id)">ดูข้อมูลผู้ใช้</button>
+                <button class="btn btn-warning" v-on:click="navigateTo('/user/edit/'+user.id)">แก้ไขข้อมูล</button>
+                <button class="btn btn-danger" v-on:click="deleteUser(user)">ลบข้อมูล</button>
             </p>
 
         </div>

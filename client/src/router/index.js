@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
-//Users
 import UserIndex from '@/components/Users/Index'
 import UserCreate from '@/components/Users/CreateUser'
 import UserEdit from '@/components/Users/EditUser'
@@ -22,15 +20,14 @@ export default new Router({
       component: UserCreate
     },
     {
-      path: '/user/edit/:userId',
-      name: 'users-edit',
+      path: '/user/edit',
+      name: 'user-edit',
       component: UserEdit
     },
     {
-      path: '/user/:userId',
+      path: '/user',
       name: 'user',
       component: UserShow
-    },
-    
+    }
   ]
 })

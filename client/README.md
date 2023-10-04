@@ -1,6 +1,6 @@
-# nv-webblog-client
+# js-project
 
-> node.js vuejs webblog client
+> Server Side Programming Project
 
 ## Build Setup
 

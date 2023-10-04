@@ -19,7 +19,7 @@
     </div>
 </template>
 <script>
-import UsersService from '../../services/UsersService';
+import UsersService from '@/services/UsersService';
 
     export default {
         data () {
