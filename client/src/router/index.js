@@ -44,7 +44,7 @@ export default new Router({
     },
     {
       path: '/computer/create',
-      name: 'computer-create',
+      name: 'computers-create',
       component: ComputerCreate
     },
     {

@@ -1,3 +1,5 @@
+const {Computer} = require('../models')
+
 module.exports = {
     async index(req, res) {
         try {
@@ -60,7 +62,7 @@ module.exports = {
 
     async show(req, res) {
         try {
-            const computer = await Computer.findByPk(req.params.userId)
+            const computer = await Computer.findByPk(req.params.computerId)
             res.send(computer)
         } catch (error) {
             res.status(500).send({
