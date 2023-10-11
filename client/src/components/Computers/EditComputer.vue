@@ -1,60 +1,122 @@
 <template>
-    <div>
-        <h1>Edit User</h1>
-        <form v-on:submit.prevent = "editUser">
-            <p>name: <input type="text" v-model="user.name"></p>
-            <p>lastname: <input type="text" v-model="user.lastname"></p>
-            <p>email: <input type="text" v-model="user.email"></p>
-            <p>password: <input type="text" v-model="user.password"></p>
-            <p><button type="submit">edit user</button></p>
-        </form>
-        <hr>
-        <div>
-            <p>name: {{ user.name }}</p>
-            <p>lastname: {{ user.lastname }}</p>
-            <p>email: {{ user.email }}</p>
-            <p>password: {{ user.password }}</p>
-            <p></p>
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <form v-on:submit.prevent="editComputer" class="border border-2 rounded p-2 row text-start w-75 bg-light">
+                <h1 class="text-center fw-bold mb-3">Edit Computer</h1>
+                <hr>
+                <div class="col">
+                    <div class="mb-3 mx-3">
+                        <label for="product" class="form-label fw-bold">Product</label>
+                        <input type="text" v-model="computer.product" class="form-control" placeholder="Enter a Product"
+                            required>
+                    </div>
+                    <div class="mb-3 mx-3">
+                        <label for="brand" class="form-label fw-bold">Brand</label>
+                        <input type="text" v-model="computer.brand" class="form-control" placeholder="Enter a Brand"
+                            required>
+                    </div>
+                    <div class="mb-3 mx-3">
+                        <label for="processor" class="form-label fw-bold">Processor</label>
+                        <input type="text" v-model="computer.processor" class="form-control" placeholder="Enter a Processor"
+                            required>
+                    </div>
+                    <div class="mb-3 mx-3">
+                        <label for="display" class="form-label fw-bold">Display</label>
+                        <input type="text" v-model="computer.display" class="form-control" placeholder="Enter a Display"
+                            required>
+                    </div>
+                    <div class="mb-3 mx-3">
+                        <label for="memory" class="form-label fw-bold">Memory</label>
+                        <input type="text" v-model="computer.memory" class="form-control" placeholder="Enter a Memory"
+                            required>
+                    </div>
+                    <div class="mb-3 mx-3">
+                        <label for="storage" class="form-label fw-bold">Storage</label>
+                        <input type="text" v-model="computer.storage" class="form-control" placeholder="Enter a Storage"
+                            required>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="mb-3 mx-3">
+                        <label for="graphics" class="form-label fw-bold">Graphics</label>
+                        <input type="text" v-model="computer.graphics" class="form-control" placeholder="Enter a Graphics"
+                            required>
+                    </div>
+                    <div class="mb-3 mx-3">
+                        <label for="operation" class="form-label fw-bold">Operation</label>
+                        <input type="text" v-model="computer.operation" class="form-control"
+                            placeholder="Enter an Operation" required>
+                    </div>
+                    <div class="mb-3 mx-3">
+                        <label for="camera" class="form-label fw-bold">Camera</label>
+                        <input type="text" v-model="computer.camera" class="form-control" placeholder="Enter a Camera"
+                            required>
+                    </div>
+                    <div class="mb-3 mx-3">
+                        <label for="wireless" class="form-label fw-bold">Wireless</label>
+                        <input type="text" v-model="computer.wireless" class="form-control" placeholder="Enter a Wireless"
+                            required>
+                    </div>
+                    <div class="mb-3 mx-3">
+                        <label for="color" class="form-label fw-bold">Color</label>
+                        <input type="text" v-model="computer.color" class="form-control" placeholder="Enter a Color"
+                            required>
+                    </div>
+                    <div class="mb-3 mx-3">
+                        <label for="weight" class="form-label fw-bold">Weight</label>
+                        <input type="text" v-model="computer.weight" class="form-control" placeholder="Enter a Weight"
+                            required>
+                    </div>
+                </div>
+                <div class="mb-3 mx-3 d-flex justify-content-start">
+                    <button type="submit" class="btn btn-success fw-bold me-3">Edit Computer</button>
+                </div>
+            </form>
         </div>
     </div>
 </template>
 <script>
-import UsersService from '@/services/UsersService';
+import ComputersService from '@/services/ComputersService';
 
-    export default {
-        data () {
-            return {
-                user: {
-                    name: '',
-                    lastname: '',
-                    email: '',
-                    password: '',
-                    status: 'active',
-                }
-            }
-        },
-        methods: {
-            async editUser () {
-                try {
-                    await UsersService.put(this.user)
-                    this.$router.push({
-                        name: 'users'
-                    })
-                }catch (error) {
-                    console.log(error)
-                }
-            }
-        },
-        async created () {
-            try {
-                let userId = this.$route.params.userId
-                this.user = (await UsersService.show(userId)).data
-            }catch (error) {
-                console.log (error)
+export default {
+    data() {
+        return {
+            computer: {
+                product: '',
+                brand: '',
+                processor: '',
+                display: '',
+                memory: '',
+                storage: '',
+                graphics: '',
+                operation: '',
+                camera: '',
+                wireless: '',
+                color: '',
+                weight: ''
             }
         }
+    },
+    methods: {
+        async editComputer() {
+            try {
+                await ComputersService.put(this.computer)
+                this.$router.push({
+                    name: 'computers'
+                })
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    },
+    async created() {
+        try {
+            let computerId = this.$route.params.computerId
+            this.computer = (await ComputersService.show(computerId)).data
+        } catch (error) {
+            console.log(error)
+        }
     }
+}
 </script>
-<style scoped>
-
-</style>
+<style scoped></style>

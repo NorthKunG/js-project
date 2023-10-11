@@ -2,6 +2,7 @@
     <div class="container">
         <h2 class="mb-3 fw-bold">Get All Computers</h2>
         <h4 class="mb-3">Computer Amount: {{ computers.length }}</h4>
+        <button class="btn btn-warning mb-3" v-on:click="navigateTo('/computer/create/')">Create Computer</button>
         <div class="row row-cols-3 d-flex justify-content-center">
             <div v-for="computer in computers" v-bind:key="computer.id" style="width: 45rem"
                 class="col border mb-3 mx-2 p-3 text-start">

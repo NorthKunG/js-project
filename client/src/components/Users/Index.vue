@@ -26,7 +26,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="password">Password</label>
-                    <span class="input-group-text">{{ user.email }}</span>
+                    <span class="input-group-text">{{ user.password }}</span>
                 </div>
                 <div>
                     <button class="btn btn-primary" v-on:click="navigateTo('/user/' + user.id)">View</button>
