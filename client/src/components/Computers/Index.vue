@@ -1,29 +1,40 @@
 <template>
     <div class="container">
-        <h2 class="mb-3 fw-bold">Get All Computers</h2>
-        <h4 class="mb-3">Computer Amount: {{ computers.length }}</h4>
+        <h2 class="mb-3 fw-bold text-light pt-3">Get All Computers</h2>
+        <h4 class="mb-3 fw-bold text-light">Computer Amount: {{ computers.length }}</h4>
         <button class="btn btn-warning mb-3 fw-bold" v-on:click="navigateTo('/computer/create/')">Create Computer</button>
+        <h4 class="mb-3 text-warning">If the computer is edited or deleted, it must be refreshed.</h4>
         <div class="row row-cols-3 d-flex justify-content-center fw-bold">
             <div v-for="computer in computers" v-bind:key="computer.id" style="width: 45rem"
                 class="col border mb-3 mx-2 p-3 text-start bg-light">
-                <div class="row p-2 mb-3">
-                    <div class="col">
-                        <label for="product" class="form-label">Product:</label>
-                        <span class="input-group-text"> {{ computer.product }} </span>
-                    </div>
-                </div>
                 <div class="row p-2 mb-3">
                     <div class="col-3">
                         <label for="brand" class="form-label">Brand:</label>
                         <span class="input-group-text"> {{ computer.brand }} </span>
                     </div>
                     <div class="col">
-                        <label for="color" class="form-label">Color:</label>
-                        <span class="input-group-text"> {{ computer.color }} </span>
+                        <label for="product" class="form-label">Product:</label>
+                        <span class="input-group-text"> {{ computer.product }} </span>
+                    </div>
+                </div>
+                <div class="row p-2 mb-3">
+                    <div class="col">
+                        <label for="color" class="form-label">Processor:</label>
+                        <span class="input-group-text"> {{ computer.processor }} </span>
                     </div>
                     <div class="col">
-                        <label for="weight" class="form-label">Weight:</label>
-                        <span class="input-group-text"> {{ computer.weight }} </span>
+                        <label for="color" class="form-label">Display:</label>
+                        <span class="input-group-text"> {{ computer.display }} </span>
+                    </div>
+                </div>
+                <div class="row p-2 mb-3">
+                    <div class="col">
+                        <label for="color" class="form-label">Graphics:</label>
+                        <span class="input-group-text"> {{ computer.graphics }} </span>
+                    </div>
+                    <div class="col">
+                        <label for="color" class="form-label">Memory:</label>
+                        <span class="input-group-text"> {{ computer.memory }} </span>
                     </div>
                 </div>
                 <button class="btn btn-primary fw-bold" v-on:click="navigateTo('/computer/' + computer.id)">View</button>
