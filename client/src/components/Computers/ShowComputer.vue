@@ -1,9 +1,8 @@
 <template>
-    <div class="container m">
-        <h2>Product</h2>
+    <div class="container">
         <div class="row row-cols-3 d-flex justify-content-center">
-            <div style="width: 50rem" class="col border mb-3 mx-2 p-3 text-start">
-                <div class="row p-2 mb-3">
+            <div style="width: 50rem" class="col mx-2 p-3 text-start bg-light h-100">
+                <div class="row p-2 mb-2">
                     <div class="col-1">
                         <label for="ID" class="form-label">ID:</label>
                         <span class="input-group-text"> {{ computer.id }} </span>
@@ -13,7 +12,7 @@
                         <span class="input-group-text"> {{ computer.product }} </span>
                     </div>
                 </div>
-                <div class="row p-2 mb-3">
+                <div class="row p-2 mb-2">
                     <div class="col-3">
                         <label for="brand" class="form-label">Brand:</label>
                         <span class="input-group-text"> {{ computer.brand }} </span>
@@ -23,7 +22,7 @@
                         <span class="input-group-text"> {{ computer.processor }} </span>
                     </div>
                 </div>
-                <div class="row p-2 mb-3">
+                <div class="row p-2 mb-2">
                     <div class="col">
                         <label for="display" class="form-label">Display:</label>
                         <span class="input-group-text"> {{ computer.display }} </span>
@@ -33,7 +32,7 @@
                         <span class="input-group-text"> {{ computer.memory }} </span>
                     </div>
                 </div>
-                <div class="row p-2 mb-3">
+                <div class="row p-2 mb-2">
                     <div class="col">
                         <label for="storage" class="form-label">Storage:</label>
                         <span class="input-group-text"> {{ computer.storage }} </span>
@@ -43,7 +42,7 @@
                         <span class="input-group-text"> {{ computer.graphics }} </span>
                     </div>
                 </div>
-                <div class="row p-2 mb-3">
+                <div class="row p-2 mb-2">
                     <div class="col">
                         <label for="operation" class="form-label">Operation:</label>
                         <span class="input-group-text"> {{ computer.operation }} </span>
@@ -53,7 +52,7 @@
                         <span class="input-group-text"> {{ computer.camera }} </span>
                     </div>
                 </div>
-                <div class="row p-2 mb-3">
+                <div class="row p-2 mb-2">
                     <div class="col">
                         <label for="wireless" class="form-label">Wireless:</label>
                         <span class="input-group-text"> {{ computer.wireless }} </span>

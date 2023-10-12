@@ -1,8 +1,8 @@
 <template>
     <div class="container">
         <div class="d-flex justify-content-center">
-            <form v-on:submit.prevent="createComputer" class="border border-2 rounded p-2 row text-start w-75 bg-light">
-                <h1 class="text-center fw-bold mb-3">Create Computer</h1>
+            <form v-on:submit.prevent="createComputer" class="p-1 row text-start w-75 bg-light">
+                <h1 class="text-center fw-bold mb-2">Create Computer</h1>
                 <hr>
                 <div class="col">
                     <div class="mb-3 mx-3">
@@ -70,6 +70,7 @@
                 </div>
                 <div class="mb-3 mx-3 d-flex justify-content-start">
                     <button type="submit" class="btn btn-success fw-bold me-3">Create Computer</button>
+                    <a @click="$router.back()" class="btn btn-danger fw-bold">Back</a>
                 </div>
             </form>
         </div>

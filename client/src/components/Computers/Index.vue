@@ -2,10 +2,10 @@
     <div class="container">
         <h2 class="mb-3 fw-bold">Get All Computers</h2>
         <h4 class="mb-3">Computer Amount: {{ computers.length }}</h4>
-        <button class="btn btn-warning mb-3" v-on:click="navigateTo('/computer/create/')">Create Computer</button>
-        <div class="row row-cols-3 d-flex justify-content-center">
+        <button class="btn btn-warning mb-3 fw-bold" v-on:click="navigateTo('/computer/create/')">Create Computer</button>
+        <div class="row row-cols-3 d-flex justify-content-center fw-bold">
             <div v-for="computer in computers" v-bind:key="computer.id" style="width: 45rem"
-                class="col border mb-3 mx-2 p-3 text-start">
+                class="col border mb-3 mx-2 p-3 text-start bg-light">
                 <div class="row p-2 mb-3">
                     <div class="col">
                         <label for="product" class="form-label">Product:</label>
@@ -26,10 +26,10 @@
                         <span class="input-group-text"> {{ computer.weight }} </span>
                     </div>
                 </div>
-                <button class="btn btn-primary" v-on:click="navigateTo('/computer/' + computer.id)">View</button>
+                <button class="btn btn-primary fw-bold" v-on:click="navigateTo('/computer/' + computer.id)">View</button>
                 <div class="float-end">
-                    <button class="btn btn-success" v-on:click="navigateTo('/computer/edit/' + computer.id)">Edit</button>
-                    <button class="btn btn-danger" v-on:click="deleteComputer(computer)">Delete</button>
+                    <button class="btn btn-success fw-bold" v-on:click="navigateTo('/computer/edit/' + computer.id)">Edit</button>
+                    <button class="btn btn-danger fw-bold" v-on:click="deleteComputer(computer)">Delete</button>
                 </div>
             </div>
         </div>

@@ -34,7 +34,7 @@ export default {
         }
     },
     methods: {
-        async editUser() {
+        async editComputer() {
             try {
                 await UsersService.put(this.user)
                 this.$router.push({
