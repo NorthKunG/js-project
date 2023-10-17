@@ -1,4 +1,4 @@
-const {Computer} = require('../models')
+const { Computer } = require('../models')
 
 module.exports = {
     async index(req, res) {
@@ -30,6 +30,7 @@ module.exports = {
                     id: req.params.computerId
                 }
             })
+            res.send(req.body)
         } catch (error) {
             res.status(500).send({
                 error: 'Update computer incorrect'

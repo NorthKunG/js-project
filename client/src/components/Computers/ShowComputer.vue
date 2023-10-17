@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
+    <div class="container position-relative position-absolute top-50 start-50 translate-middle">
         <div class="row row-cols-3 d-flex justify-content-center">
-            <div style="width: 50rem" class="col mx-2 p-3 text-start bg-light h-100">
+            <div style="width: 50rem" class="col mx-2 p-3 text-start bg-secondary rounded-2 h-100">
                 <div class="row p-2 mb-2">
                     <div class="col-1">
                         <label for="ID" class="form-label">ID:</label>

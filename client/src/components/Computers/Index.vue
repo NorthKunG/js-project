@@ -37,10 +37,10 @@
                         <span class="input-group-text"> {{ computer.memory }} </span>
                     </div>
                 </div>
-                <button class="btn btn-primary fw-bold" v-on:click="navigateTo('/computer/' + computer.id)">View</button>
+                <button class="btn btn-primary" v-on:click="navigateTo('/computer/' + computer.id)">View</button>
                 <div class="float-end">
-                    <button class="btn btn-success fw-bold" v-on:click="navigateTo('/computer/edit/' + computer.id)">Edit</button>
-                    <button class="btn btn-danger fw-bold" v-on:click="deleteComputer(computer)">Delete</button>
+                    <button class="btn btn-success" v-on:click="navigateTo('/computer/edit/' + computer.id)">Edit</button>
+                    <button class="btn btn-danger" v-on:click="deleteComputer(computer)">Delete</button>
                 </div>
             </div>
         </div>
@@ -66,6 +66,7 @@ export default {
             if (result) {
                 try {
                     await ComputersService.delete(computer)
+                    this.refreshData()
                 } catch (error) {
                     console.log(error)
                 }
@@ -73,6 +74,9 @@ export default {
         },
         async refreshData() {
             this.computers = (await ComputersService.index()).data
+        },
+        async back() {
+            this.$router.back();
         }
     }
 }

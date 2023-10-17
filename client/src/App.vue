@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="bg-primary">
+  <div id="app">
     <router-view />
   </div>
 </template>
@@ -20,4 +20,14 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
+body, html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+body {
+  background-color: #6610f2;
+}
+
 </style>
