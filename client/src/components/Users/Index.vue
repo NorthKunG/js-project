@@ -1,9 +1,11 @@
 <template>
     <div class="container">
+        <p><button v-on:click="logout">Logout</button></p>
         <h2 class="mb-3">Get All Users</h2>
         <h4 class="mb-3">จำนวนผู้ใช้งาน {{ users.length }}</h4>
         <div class="row row-cols-3 d-flex justify-content-center">
-            <div v-for="user in users" v-bind:key="user.id" style="width: 25rem" class="col border mb-3 mx-2 p-3 text-start">
+            <div v-for="user in users" v-bind:key="user.id" style="width: 25rem"
+                class="col border mb-3 mx-2 p-3 text-start">
                 <div class="mb-3">
                     <label for="ID" class="form-label">ID:</label>
                     <span class="input-group-text"> {{ user.id }} </span>
@@ -65,7 +67,7 @@ export default {
         },
         async refreshData() {
             this.users = (await UsersService.index()).data
-        }
+        },
     }
 }
 </script>

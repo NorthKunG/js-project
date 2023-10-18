@@ -13,6 +13,9 @@ import ComputerCreate from '@/components/Computers/CreateComputer'
 import ComputerEdit from '@/components/Computers/EditComputer'
 import ComputerShow from '@/components/Computers/ShowComputer'
 
+// Authen
+import Login from '@/components/Login'
+
 Vue.use(Router)
 
 export default new Router({
@@ -56,6 +59,12 @@ export default new Router({
       path: '/computer/:computerId',
       name: 'computer',
       component: ComputerShow
+    },
+    // authen
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
     }
   ]
 })

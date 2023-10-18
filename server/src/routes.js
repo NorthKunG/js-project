@@ -1,12 +1,16 @@
 const UserController = require('./controllers/UserController')
 const ComputerController = require('./controllers/ComputerController')
+const UserAuthenController = require('./controllers/UserAuthenController')
+const isAuthenController = require('./authen/isAuthenController')
 
 module.exports = (app) => {
     /* RESFUL Api dor users management */
 
     // get all user
-    app.get('/users', UserController.index)
-
+    app.get('/users',
+        isAuthenController,
+        UserController.index
+    )
     // create user
     app.post('/user', UserController.create)
 
@@ -33,4 +37,6 @@ module.exports = (app) => {
 
     // get computer by id
     app.get('/computer/:computerId', ComputerController.show)
+
+    app.post('/login', UserAuthenController.login)
 }
