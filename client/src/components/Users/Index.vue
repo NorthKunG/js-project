@@ -60,6 +60,7 @@ export default {
             if (result) {
                 try {
                     await UsersService.delete(user)
+                    this.refreshData();
                 } catch (error) {
                     console.log(error)
                 }
