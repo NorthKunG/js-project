@@ -1,73 +1,78 @@
 <template>
-    <div class="container position-relative position-absolute top-50 start-50 translate-middle">
-        <div class="row row-cols-3 d-flex justify-content-center">
-            <div style="width: 50rem" class="col mx-2 p-3 text-start bg-secondary rounded-2 h-100">
-                <div class="row p-2 mb-2">
-                    <div class="col-1">
-                        <label for="ID" class="form-label">ID:</label>
-                        <span class="input-group-text"> {{ computer.id }} </span>
+    <div>
+        <header>
+            <h1 class="mb-3 fw-bold pt-3">Show Computer</h1>
+        </header>
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col">
+                    <div class="row mb-3">
+                        <div class="col-1">
+                            <label for="id" class="form-label fw-bold">ID</label>
+                            <span class="form-control">{{ computer.id }}</span>
+                        </div>
+                        <div class="col">
+                            <label for="product" class="form-label fw-bold">Product</label>
+                            <span class="form-control">{{ computer.product }}</span>
+                        </div>
                     </div>
-                    <div class="col">
-                        <label for="product" class="form-label">Product:</label>
-                        <span class="input-group-text"> {{ computer.product }} </span>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="brand" class="form-label fw-bold">Brand</label>
+                            <span class="form-control">{{ computer.brand }}</span>
+                        </div>
+                        <div class="col">
+                            <label for="price" class="form-label fw-bold">Price</label>
+                            <span class="form-control" placeholder="Enter a Price" required>฿{{ computer.price }}</span>
+                        </div>
                     </div>
-                </div>
-                <div class="row p-2 mb-2">
-                    <div class="col-3">
-                        <label for="brand" class="form-label">Brand:</label>
-                        <span class="input-group-text"> {{ computer.brand }} </span>
+                    <div class="mb-3">
+                        <label for="processor" class="form-label fw-bold">Processor</label>
+                        <span class="form-control">{{ computer.processor }}</span>
                     </div>
-                    <div class="col">
-                        <label for="processor" class="form-label">Processor:</label>
-                        <span class="input-group-text"> {{ computer.processor }} </span>
+                    <div class="mb-3">
+                        <label for="display" class="form-label fw-bold">Display</label>
+                        <span class="form-control">{{ computer.display }}</span>
                     </div>
-                </div>
-                <div class="row p-2 mb-2">
-                    <div class="col">
-                        <label for="display" class="form-label">Display:</label>
-                        <span class="input-group-text"> {{ computer.display }} </span>
+                    <div class="mb-3">
+                        <label for="memory" class="form-label fw-bold">Memory</label>
+                        <span class="form-control">{{ computer.memory }}</span>
                     </div>
-                    <div class="col">
-                        <label for="memory" class="form-label">Memory:</label>
-                        <span class="input-group-text"> {{ computer.memory }} </span>
-                    </div>
-                </div>
-                <div class="row p-2 mb-2">
-                    <div class="col">
-                        <label for="storage" class="form-label">Storage:</label>
-                        <span class="input-group-text"> {{ computer.storage }} </span>
-                    </div>
-                    <div class="col">
-                        <label for="graphics" class="form-label">Graphics:</label>
-                        <span class="input-group-text"> {{ computer.graphics }} </span>
-                    </div>
-                </div>
-                <div class="row p-2 mb-2">
-                    <div class="col">
-                        <label for="operation" class="form-label">Operation:</label>
-                        <span class="input-group-text"> {{ computer.operation }} </span>
-                    </div>
-                    <div class="col">
-                        <label for="camera" class="form-label">camera:</label>
-                        <span class="input-group-text"> {{ computer.camera }} </span>
+                    <div class="mb-3">
+                        <label for="storage" class="form-label fw-bold">Storage</label>
+                        <span class="form-control">{{ computer.storage }}</span>
                     </div>
                 </div>
-                <div class="row p-2 mb-2">
-                    <div class="col">
-                        <label for="wireless" class="form-label">Wireless:</label>
-                        <span class="input-group-text"> {{ computer.wireless }} </span>
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="graphics" class="form-label fw-bold">Graphics</label>
+                        <span class="form-control">{{ computer.graphics }}</span>
                     </div>
-                    <div class="col">
-                        <label for="color" class="form-label">Color:</label>
-                        <span class="input-group-text"> {{ computer.color }} </span>
+                    <div class="mb-3">
+                        <label for="operation" class="form-label fw-bold">Operation</label>
+                        <span class="form-control">{{ computer.operation }}</span>
                     </div>
-                    <div class="col">
-                        <label for="weight" class="form-label">Weight:</label>
-                        <span class="input-group-text"> {{ computer.weight }} </span>
+                    <div class="mb-3">
+                        <label for="camera" class="form-label fw-bold">Camera</label>
+                        <span class="form-control">{{ computer.camera }}</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="wireless" class="form-label fw-bold">Wireless</label>
+                        <span class="form-control">{{ computer.wireless }}</span>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="color" class="form-label fw-bold">Color</label>
+                            <span class="form-control">{{ computer.color }}</span>
+                        </div>
+                        <div class="col">
+                            <label for="weight" class="form-label fw-bold">Weight</label>
+                            <span class="form-control">{{ computer.weight }}</span>
+                        </div>
                     </div>
                 </div>
-                <div class="p-2">
-                    <button class="btn btn-danger" v-on:click="navigateTo('/computers/')">Back</button>
+                <div class="my-3 d-flex justify-content-start">
+                    <a @click="$router.back()" class="btn btn-danger">Go Back</a>
                 </div>
             </div>
         </div>

@@ -11,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
         camera: DataTypes.STRING,
         wireless: DataTypes.STRING,
         color: DataTypes.STRING,
-        weight: DataTypes.STRING
+        weight: DataTypes.STRING,
+        price: DataTypes.INTEGER
     })
 
     return Computer
