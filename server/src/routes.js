@@ -1,28 +1,7 @@
-const UserController = require('./controllers/UserController')
 const ComputerController = require('./controllers/ComputerController')
-const UserAuthenController = require('./controllers/UserAuthenController')
-const isAuthenController = require('./authen/isAuthenController')
 
 module.exports = (app) => {
     /* RESFUL Api dor users management */
-
-    // get all user
-    app.get('/users',
-        isAuthenController,
-        UserController.index
-    )
-    // create user
-    app.post('/user', UserController.create)
-
-    // edit user, suspend, active
-    app.put('/user/:userId', UserController.put)
-
-    // delete user
-    app.delete('/user/:userId', UserController.remove)
-
-    // get user by id
-    app.get('/user/:userId', UserController.show)
-
     // get all computer
     app.get('/computers', ComputerController.index)
 
@@ -36,7 +15,4 @@ module.exports = (app) => {
     app.delete('/computer/:computerId', ComputerController.remove)
 
     // get computer by id
-    app.get('/computer/:computerId', ComputerController.show)
-
-    app.post('/login', UserAuthenController.login)
-}
+    app.get('/computer/:computerId', ComputerController.show)}

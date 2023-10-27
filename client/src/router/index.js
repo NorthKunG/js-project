@@ -1,45 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-//Users
-import UserIndex from '@/components/Users/Index'
-import UserCreate from '@/components/Users/CreateUser'
-import UserEdit from '@/components/Users/EditUser'
-import UserShow from '@/components/Users/ShowUser'
-
 //Computers
 import ComputerIndex from '@/components/Computers/Index'
 import ComputerCreate from '@/components/Computers/CreateComputer'
 import ComputerEdit from '@/components/Computers/EditComputer'
 import ComputerShow from '@/components/Computers/ShowComputer'
 
-// Authen
-import Login from '@/components/Login'
-
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/users',
-      name: 'users',
-      component: UserIndex
-    },
-    {
-      path: '/user/create',
-      name: 'users-create',
-      component: UserCreate
-    },
-    {
-      path: '/user/edit/:userId',
-      name: 'user-edit',
-      component: UserEdit
-    },
-    {
-      path: '/user/:userId',
-      name: 'user',
-      component: UserShow
-    },
     {
       path: '/computers',
       name: 'computers',
@@ -59,12 +30,6 @@ export default new Router({
       path: '/computer/:computerId',
       name: 'computer',
       component: ComputerShow
-    },
-    // authen
-    {
-      path: '/login',
-      name: 'login',
-      component: Login
     }
   ]
 })
